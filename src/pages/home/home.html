@@ -1,0 +1,42 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Hava Durumu</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="Home">
+
+    <ion-grid *ngIf='weather'>
+      <ion-row>
+        <ion-col width-50 offset-25>
+          <h2 class="location">{{weather.name+','+weather.sys.country}} </h2>
+          <div class="icon"> <img src={{iconurl}} alt=""></div>
+          <h3 class="description">{{weather.weather[0].description}}</h3>
+          <h1 class="temperature">{{weather.main.temp}}&deg;</h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col width-100>
+          <ion-list>
+            <ion-item>
+              <strong>Yağış:</strong> %{{weather.clouds.all}}
+            </ion-item>
+            <ion-item>
+              <strong>Nem:</strong>  %{{weather.main.humidity}}
+            </ion-item>
+            <ion-item>
+              <strong>Rüzgar:</strong> {{weather.wind.speed}} m/sn
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

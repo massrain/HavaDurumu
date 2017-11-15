@@ -1,0 +1,22 @@
+page-about {
+  .content-md {
+      background-color: #01bf86;
+  }
+  .item-md{
+    background-color: #005f43;
+    max-width:400px;
+    text-align:center;
+    margin:auto;
+  }
+  .item-md  p{
+        color:white;
+  }
+
+  .list-md .item-block .item-inner {
+      border-bottom: 0px solid transparent!important;
+  }
+  .label {
+    font-weight:normal;
+  }
+
+}
